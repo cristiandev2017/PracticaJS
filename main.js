@@ -9,8 +9,6 @@
         this.height = height;
         //Si esta jugando
         this.playing = false;
-        //Finalizo el juego
-        this.game_over = false;
         //Las barras
         this.bars = [];
         //La pelota
@@ -151,6 +149,16 @@
     }
 
     function hit(a, b) {
+
+        if (this.ball.x < 0 || this.ball.x > 800) {
+            board.playing = false;
+            let mensaje = document.getElementById("gameover");
+            mensaje.innerHTML = "<h3 style='color:green;'>Juego terminado!</h3>";
+            setTimeout(function() {
+                location.reload()
+            }, 2000);
+            //location.reload()
+        }
         //Revisa si a colisiona con b
         var hit = false;
         //Colisiones horizontales
@@ -175,8 +183,7 @@
     //Aca implementaremos unas funciones las cuales no son de un objeto, pero que nos ayudan a realizar ciertas cosas
     //Este dibujara los elementos
     function draw(ctx, element) {
-        //Me dice si el objeto tiene una propiedad kind
-
+        //Dibuja el objeto la pelotica y las barras
         switch (element.kind) {
             case "rectangle":
                 ctx.fillRect(element.x, element.y, element.width, element.height);
@@ -195,8 +202,10 @@
 //Creo el tablero
 var board = new Board(800, 400);
 //Creo la barra
-var bar = new Bar(20, 100, 40, 100, board);
-var bar_2 = new Bar(735, 100, 40, 100, board);
+var bar = new Bar(20, 100, 10, 100, board);
+var bar_2 = new Bar(738, 100, 10, 100, board);
+var bar_up = new Bar(0, 0, 800, 10, board);
+var bar_down = new Bar(0, 390, 800, 10, board);
 var canvas = document.getElementById('canvas');
 var board_view = new BoardView(canvas, board);
 var ball = new Ball(350, 100, 10, board);
@@ -206,16 +215,17 @@ var ball = new Ball(350, 100, 10, board);
 //Aca esta pendiente del keydown el cual es un evento de teclado sucede cuando se preciona una tecla
 document.addEventListener("keydown", function(ev) {
     //aca inicializa con las teclas de arriba y la tecla hacia abajo
-    if (ev.keyCode === 38) {
+    console.log(ev.keyCode);
+    if (ev.keyCode === 87) {
         ev.preventDefault();
         bar.up();
-    } else if (ev.keyCode === 40) {
+    } else if (ev.keyCode === 83) {
         ev.preventDefault();
         bar.down();
-    } else if (ev.keyCode === 87) {
+    } else if (ev.keyCode === 38) {
         ev.preventDefault();
         bar_2.up();
-    } else if (ev.keyCode === 83) {
+    } else if (ev.keyCode === 40) {
         ev.preventDefault();
         bar_2.down();
     } else if (ev.keyCode === 32) {

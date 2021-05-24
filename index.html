@@ -6,12 +6,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyecto Practico Javascript</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <LINK rel="StyleSheet" href="style.css" type="text/css">
 </head>
 
 <body>
-    <h1>Proyecto Practico Javascript | SOFKA</h1>
-    <canvas id="canvas"></canvas>
+
+
+    <h2 class="text-center">Proyecto Practico Javascript | SOFKA</h2>
+    <hr>
+    <ul>
+        <li>Para iniciar el juego presione la <strong>tecla espacio</strong>, El juego <strong>finaliza</strong> cuando la pelota toca las lineas grises laterales</li>
+        <li>El juego se pondra en <strong>pausa</strong> con la tecla espacio. Para mover la barra izquierda usas las teclas W y la S<strong>(W  S)</strong> para la barra derecha usaremos las teclas de arriba y abajo <strong>(↑↓)</strong></li>
+    </ul>
+
+    <center>
+        <div id="gameover"></div>
+
+        <canvas id="canvas"></canvas>
+    </center>
     <script src="main.js"></script>
 </body>
 
