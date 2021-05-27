@@ -22,3 +22,5 @@ Este es un juego de ping pong donde se utilizan los siguientes modelos,metodos y
 - ¿Que realiza la funcion draw?
 - ¿ Como se instancia una clase en el modelo prototipe?
 - ¿Que realiza la variable kind?  
+- ¿Se podria hacer el mismo ejercicio usando las clases?
+- ¿Que funciones matematicas se utilizan para definir la versatibilidad luego de los rebotes?
