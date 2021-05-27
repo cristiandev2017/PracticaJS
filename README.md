@@ -15,3 +15,10 @@ Este es un juego de ping pong donde se utilizan los siguientes modelos,metodos y
 - espacio  : Pausa el juego o lo inicializa.
 - ↑↓ : Mueve la barra izquierda.
 - S W : Mueve la barra derecha
+
+### Preguntas
+- ¿Como se instancia una clase por medio de prototipos?
+- ¿Porque es importante usar el this en las variables que se utilizan?
+- ¿Que realiza la funcion draw?
+- ¿ Como se instancia una clase en el modelo prototipe?
+- ¿Que realiza la variable kind?  
